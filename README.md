@@ -98,11 +98,12 @@ Awesome AIGC Image Detection
 │
 ├── 5. Zero-shot & Training-free
 │   ├── Training-free (RIGID, Intermediate Representations, Spectral Artifacts)
-│   ├── Zero-shot (Forensic Self-Descriptions, SimLBR)
+│   ├── Zero-shot (Forensic Self-Descriptions)
 │   └── Contrastive Inversion
 │
 ├── 6. Generalization & Training Strategies
 │   ├── Data Alignment (Dual Data Alignment, Aligned Datasets)
+│   ├── Regularization (SimLBR)
 │   ├── Bias-Free Training (B-Free Paradigm)
 │   ├── Real-Centric (MIRROR, Real-Centric Envelope)
 │   └── Calibration (Calibrated Detector, D³)
@@ -134,6 +135,8 @@ Representative methods with open-source code:
 
 |  Title  |   Venue  |   Year   |   Code   |   Category   |
 |:--------|:--------:|:--------:|:--------:|:--------:|
+| [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | CVPR | 2026 | [GitHub](https://github.com/UltraCapture/GAPL) | Multi-Generator |
+| [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | CVPR | 2026 | [GitHub](https://github.com/liyih/IAPL) | Prompt Learning |
 | [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | CVPR | 2025 | [GitHub](https://github.com/JeongsooP/Community-Forensics) | Multi-Generator |
 | [**FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided Reconstruction Error**](https://arxiv.org/abs/2412.07140) | CVPR | 2025 | - | Reconstruction + Frequency |
 | [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | CVPR | 2025 | [GitHub](https://github.com/grip-unina/B-Free) | Generalization |
@@ -160,7 +163,9 @@ Representative methods with open-source code:
 
 ### CVPR 2026
 
-+ [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | `Zero-shot`
++ [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | `Generalization`
++ [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | Qin et al. | [Code](https://github.com/UltraCapture/GAPL) | `Multi-Generator`
++ [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | [Code](https://github.com/liyih/IAPL) | `Prompt Learning`
 
 ### ICLR 2026
 
@@ -324,7 +329,7 @@ Methods leveraging CLIP or other vision-language models for AIGC detection.
 
 + [**AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors**](https://arxiv.org/abs/2310.17419) | Chang et al. 2024 | `Prompt`
 + **PLOT: Prompt Learning with Optimal Transport** | `Prompt`
-+ **Image-Adaptive Prompt Learning for AI-Generated Image Detection** | 2025 | `Prompt`
++ [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Prompt`
 
 #### 1.3 Feature Decoupling & Fusion
 
@@ -451,7 +456,6 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + **Intermediate Representations Are Strong Training-Free AI-Generated Image Detectors** | `Training-free`
 + **Training-Free AI-Generated Image Detection via Spectral Artifacts** | `Training-free`
 + **Forensic Self-Descriptions Are All You Need for Zero-Shot Detection, Open-Set Source Attribution, and Localization** | Nguyen et al. 2025 | `Zero-shot`
-+ [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | CVPR 2026 | `Zero-shot`
 + [**Zero-Shot Detection of AI-Generated Images**](https://arxiv.org/abs/2409.15875) | Cozzolino et al. | ECCV 2024 | `Zero-shot`
 + [**Detecting Generated Images by Fitting Natural Image Distributions**](https://arxiv.org/abs/2411.01674) | Zhang et al. | NeurIPS 2025 Spotlight | [Code](https://github.com/tmlr-group/ConV) | `Distribution`
 + **Triggering Generative Collapse: A Contrastive Inversion Framework for AI-Generated Image Detection** | arXiv | `Zero-shot`
@@ -497,6 +501,7 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | Rajan et al. | ICLR 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Generalization`
 + [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | Guillaro et al. | CVPR 2025 | [Code](https://github.com/grip-unina/B-Free) | `Generalization`
 + **Task-Model Alignment: A Simple Path to Generalizable AI-Generated Image Detection** | Chen et al. 2025 | `Generalization`
++ [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | CVPR 2026 | `Regularization`
 
 #### 12.2 Real-Centric & Calibration
 
@@ -504,11 +509,12 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + **Beyond Artifacts: Real-Centric Envelope Modeling for Reliable AI-Generated Image Detection** | Liu et al. 2025 | `Real-Centric`
 + [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. 2026 | `Calibration`
 + [**Stay-Positive: A Case for Ignoring Real Image Features in Fake Image Detection**](https://arxiv.org/abs/2502.07778) | ICML 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Generalization`
++ [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Test-Time Adaptation` *(see also [1.2 Prompt Learning](#12-prompt-learning))*
 
 #### 12.3 Multi-Generator & Cross-Domain
 
 + [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | Park et al. | CVPR 2025 | [Code](https://github.com/JeongsooP/Community-Forensics) | `Multi-Generator`
-+ **Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes** | Qin et al. 2025 | `Multi-Generator`
++ [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | Qin et al. | CVPR 2026 | [Code](https://github.com/UltraCapture/GAPL) | `Multi-Generator`
 + **Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection** | Zhou et al. 2025 | `Generalization`
 + **Exploring the Collaborative Advantage of Low-level Information on Generalizable AI-Generated Image Detection** | Zhou et al. 2025 | `Generalization`
 + [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Bias`
