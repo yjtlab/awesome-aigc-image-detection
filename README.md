@@ -23,9 +23,9 @@ A curated and comprehensive list of papers, datasets, and resources for **AI-Gen
   - [ICLR 2025](#iclr-2025)
   - [NeurIPS 2025](#neurips-2025)
   - [ECCV 2024](#eccv-2024)
+  - [NeurIPS 2024](#neurips-2024)
   - [CVPR 2024](#cvpr-2024)
   - [ICML 2024](#icml-2024)
-  - [Workshop](#workshop)
   - [Earlier Works (2020-2023)](#earlier-works-2020-2023)
 - [Papers by Category](#papers-by-category)
   - [1. CLIP / Vision-Language Methods](#1-clip--vision-language-methods)
@@ -131,7 +131,7 @@ Representative methods with open-source code:
 |:--------|:--------:|:--------:|:--------:|:--------:|
 | [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | CVPR | 2026 | [GitHub](https://github.com/UltraCapture/GAPL) | Multi-Generator |
 | [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | CVPR | 2026 | [GitHub](https://github.com/liyih/IAPL) | Prompt Learning |
-| [**Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning**](https://openreview.net/forum?id=5VXJPS1HoM) | ICLR (Oral) | 2026 | [GitHub](https://github.com/Rosstein/HydraFake-tanh) | LMM |
+| [**FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning**](https://openreview.net/forum?id=UcpTOa8OnG) | ICLR | 2026 | - | LMM |
 | [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | CVPR | 2025 | [GitHub](https://github.com/JeongsooP/Community-Forensics) | Multi-Generator |
 | [**FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided Reconstruction Error**](https://arxiv.org/abs/2412.07140) | CVPR | 2025 | - | Reconstruction + Frequency |
 | [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | CVPR | 2025 | [GitHub](https://github.com/grip-unina/B-Free) | Generalization |
@@ -161,7 +161,6 @@ Representative methods with open-source code:
 
 ### ICLR 2026
 
-+ [**Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning**](https://openreview.net/forum?id=5VXJPS1HoM) | Tan et al. | **Oral** | [Code](https://github.com/Rosstein/HydraFake-tanh) | `LMM`
 + [**Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection (X-AIGD)**](https://openreview.net/forum?id=Tk8ujiOgHM) | Xiao et al. | [Code](https://github.com/Coxy7/X-AIGD) | `Benchmark`
 + [**FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning**](https://openreview.net/forum?id=UcpTOa8OnG) | Ji et al. | `LMM`
 + [**Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images**](https://openreview.net/forum?id=0iN4UKZwgn) | Tan et al. | `LMM`
@@ -171,12 +170,13 @@ Representative methods with open-source code:
 + [**Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples**](https://openreview.net/forum?id=Jz5SA2KoFt) | Li et al. | `Robustness`
 + [**Data Provenance for Image Auto-Regressive Generation**](https://openreview.net/forum?id=qYu4wj7O3z) | Zhao et al. | `AR / Attribution`
 + [**A Rich Knowledge Space for Scalable Deepfake Detection**](https://openreview.net/forum?id=hNd5L7WnjC) | Jung et al. | `Deepfake`
++ [**Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning**](https://openreview.net/forum?id=5VXJPS1HoM) | Tan et al. | **Oral** | [Code](https://github.com/Rosstein/HydraFake-tanh) | `LMM`
 
 ### AAAI 2026
 
-+ [**Detecting AI-Generated Images via Distributional Deviations from Real Images (MPFT)**](https://arxiv.org/abs/2601.03586) | Niu et al. | `Perturbation`
-+ [**Color Matters: Demosaicing-Guided Color Correlation Training for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2601.22778) | Zhong et al. | `Color / Fingerprint`
++ [**AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction**](https://arxiv.org/abs/2501.09245) | Wang et al. | **Oral** | `Attribution`
 + [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. | `Calibration`
++ [**Beyond Semantic Features: Pixel-level Mapping for Generalized AI-Generated Image Detection**](https://arxiv.org/abs/2512.17350) | Zhou et al. | `Pixel-level`
 
 ### ICCV 2025
 
@@ -189,7 +189,6 @@ Representative methods with open-source code:
 + [**D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection**](https://arxiv.org/abs/2510.05891) | Zhang et al. | `Autoregressive`
 + [**Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection**](https://arxiv.org/abs/2509.09172) | Li et al. | `Benchmark`
 + [**Diffusion Epistemic Uncertainty with Asymmetric Learning for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2601.14625) | Huang et al. | `Diffusion`
-+ [**Beyond Semantic Features: Pixel-level Mapping for Generalized AI-Generated Image Detection**](https://arxiv.org/abs/2512.17350) | Zhou et al. | `Pixel-level`
 
 ### ICML 2025
 
@@ -211,6 +210,8 @@ Representative methods with open-source code:
 + [**SIDA: Social Media Image Deepfake Detection, Localization and Explanation with LMM**](https://arxiv.org/abs/2412.04292) | Huang et al. | [Code](https://github.com/hzlsaber/SIDA) | `LMM`
 + [**CO-SPY: Combining Semantic and Pixel Features to Detect Synthetic Images by AI**](https://arxiv.org/abs/2503.18286) | Cheng et al. | `Combined`
 + [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | Yang et al. | [Code](https://github.com/BigAandSmallq/D3) | `Training Strategy`
++ [**Forensic Self-Descriptions Are All You Need for Zero-Shot Detection, Open-Set Source Attribution, and Localization**](https://arxiv.org/abs/2503.21003) | Nguyen et al. | `Zero-shot`
++ [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | `Feature`
 
 ### ICLR 2025
 
@@ -236,7 +237,10 @@ Representative methods with open-source code:
 + [**Contrasting Deepfakes Diffusion via Contrastive Learning and Global-Local Similarities**](https://arxiv.org/abs/2407.20337) | Baraldi et al. | `Contrastive`
 + **Leveraging Representations from Intermediate Encoder-Blocks for Synthetic Image Detection** | - | `Feature`
 + **Forgery-aware Adaptive Transformer for Generalizable Synthetic Image Detection** | - | `Transformer`
-+ [**Detecting Generated Images by Real Images**](https://link.springer.com/content/pdf/10.1007/978-3-031-19781-9.pdf) | Tang et al. | [Code](https://github.com/Tangsenghenshou/Detecting-Generated-Images-by-Real-Images) | `Real-Only`
+
+### NeurIPS 2024
+
++ [**Breaking Semantic Artifacts for Generalized AI-generated Image Detection**](https://github.com/Zig-HS/FakeImageDetection) | Zheng et al. | [Code](https://github.com/Zig-HS/FakeImageDetection) | `Texture`
 
 ### CVPR 2024
 
@@ -250,10 +254,6 @@ Representative methods with open-source code:
 
 + [**How to Trace Latent Generative Model Generated Images without Artificial Watermark?**](https://arxiv.org/abs/2405.13360) | Wang et al. | [Code](https://github.com/ZhentingWang/LatentTracer) | `Attribution`
 + [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | Chen et al. | [Code](https://github.com/Alicedyd/DRCT) | `Reconstruction`
-
-### Workshop
-
-+ [**Exposing the Fake: Effective Diffusion-Generated Images Detection**](https://arxiv.org/abs/2307.06272) | Ma et al. | AdvML-Frontiers@ICML 2023 | `Reconstruction`
 
 ### Earlier Works (2020-2023)
 
