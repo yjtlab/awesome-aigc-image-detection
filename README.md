@@ -230,6 +230,7 @@ Representative methods with open-source code:
 + [**Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable**](https://arxiv.org/abs/2505.14359) | Chen et al. | `Spotlight` `Training Strategy`
 + [**MLEP: Multi-granularity Local Entropy Patterns for Generalized AI-generated Image Detection**](https://arxiv.org/abs/2504.13726) | Yuan et al. | [Code](https://github.com/fkeufss/MLEP) | `Pattern`
 + [**FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies**](https://arxiv.org/abs/2509.20890) | Liang et al. | [Code](https://github.com/xigua7105/FerretNet) | `Pixel`
++ [**Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection**](https://arxiv.org/abs/2506.00874) | Zhou et al. | `Bias-Free`
 
 ### ECCV 2024
 
@@ -296,13 +297,13 @@ Representative methods with open-source code:
 
 + [**Detecting Generated Images by Real Images Only**](https://arxiv.org/abs/2311.00962) | 2023 | `Real-Only`
 + [**Transfer Learning of Real Image Features with Soft Contrastive Loss for Fake Image Detection**](https://arxiv.org/abs/2403.16513) | 2024 | `Training Strategy`
-+ [**Rich and Poor Texture Contrast: A Simple yet Effective Approach for AI-generated Image Detection**](https://arxiv.org/abs/2311.12397) | [Code](https://github.com/Ekko-zn/AIGCDetectBenchmark) | 2023 | `Texture`
++ [**RIGID: A Training-free and Model-Agnostic Framework for Robust AI-Generated Image Detection**](https://arxiv.org/abs/2405.20112) | He et al. 2024 | `Perturbation`
 + [**GenDet: Towards Good Generalizations for AI-Generated Image Detection**](https://arxiv.org/abs/2312.08880) | 2023 | `Training Strategy`
 + [**Generalizable Synthetic Image Detection via Language-guided Contrastive Learning (LASTED)**](https://arxiv.org/abs/2305.13800) | [Code](https://github.com/HighwayWu/LASTED) | 2023 | `CLIP`
 + [**AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors**](https://arxiv.org/abs/2310.17419) | Chang et al. 2023 | `Prompt`
-+ [**DistilDIRE: A Small, Fast, Cheap and Lightweight Diffusion Synthesized Deepfake Detection**](https://arxiv.org/abs/2406.00856) | [Code](https://github.com/miraflow/DistilDIRE) | 2024 | `Reconstruction`
 + [**PatchCraft: Exploring Texture Patch for Efficient AI-generated Image Detection**](https://arxiv.org/abs/2311.12397) | Zhong et al. 2024 | `Patch`
 + [**Bi-LORA: A Vision-Language Approach for Synthetic Image Detection**](https://arxiv.org/abs/2404.01959) | 2024 | `CLIP`
++ [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Bias`
 
 </details>
 
@@ -413,6 +414,7 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 + [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | CVPR 2025 | `Feature`
 + [**HFI: A Unified Framework for Training-free Detection and Implicit Watermarking of Latent Diffusion Models**](https://arxiv.org/abs/2412.20704) | Choi et al. 2024 | `Fingerprint`
 + [**Data-Independent Operator: A Training-Free Artifact Representation Extractor**](https://arxiv.org/abs/2403.06803) | Tan et al. | [Code](https://github.com/chuangchuangtan/Data-Independent-Operator) | `Feature`
++ [**Exploring the Collaborative Advantage of Low-level Information on Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2504.00463) | Zhou et al. 2025 | `Feature Fusion`
 
 ---
 
@@ -425,6 +427,7 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 + [**How Noise Benefits AI-generated Image Detection**](https://arxiv.org/abs/2511.16136) | Yan et al. 2025 | `Noise`
 + **Towards Generalizable Detector for Generated Image (DEnD)** | Cai et al. | NeurIPS 2025 | [Code](https://github.com/dav-joy-thon/DEnD-Detection) | `Perturbation`
 + [**Detecting Generated Images by Fitting Natural Image Distributions**](https://arxiv.org/abs/2411.01674) | Zhang et al. | NeurIPS 2025 Spotlight | [Code](https://github.com/tmlr-group/ConV) | `Distribution`
++ [**ENABLING YOUR FORENSIC DETECTOR KNOW HOW WELL IT PERFORMS ON DISTORTED SAMPLES**](https://openreview.net/forum?id=Jz5SA2KoFt) | Li et al. | ICLR 2026 | `Robustness`
 
 ---
 
@@ -498,16 +501,17 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + [**Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable**](https://arxiv.org/abs/2505.14359) | Chen et al. | NeurIPS 2025 Spotlight | `Data Alignment`
 + [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | Rajan et al. | ICLR 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Data Alignment`
 + [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | Guillaro et al. | CVPR 2025 | [Code](https://github.com/grip-unina/B-Free) | `Bias-Free`
++ [**Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection**](https://arxiv.org/abs/2506.00874) | Zhou et al. | NeurIPS 2025 | `Bias-Free`
++ [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Bias`
 + [**Task-Model Alignment: A Simple Path to Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2512.06746) | Chen et al. 2025 | `Data Alignment`
 + [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | CVPR 2026 | `Regularization`
 
 #### 12.2 Real-Centric & Calibration
 
 + [**MIRROR: Manifold Ideal Reference ReconstructOR for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2602.02222) | Liu et al. 2026 | arXiv | [Code](https://github.com/349793927/MIRROR) | `Real-Centric`
-+ [**Beyond Artifacts: Real-Centric Envelope Modeling for Reliable AI-Generated Image Detection**](https://arxiv.org/abs/2512.20937) | Liu et al. 2025 | `Real-Centric`
-+ [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. 2026 | `Calibration`
++ [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. | AAAI 2026 | `Calibration`
 + [**Stay-Positive: A Case for Ignoring Real Image Features in Fake Image Detection**](https://arxiv.org/abs/2502.07778) | ICML 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Real-Centric`
-+ [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Test-Time Adaptation` *(see also [1.2 Prompt Learning](#12-prompt-learning))*
++ [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Test-Time Adaptation`
 
 #### 12.3 Multi-Generator
 
@@ -515,11 +519,6 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | Qin et al. | CVPR 2026 | [Code](https://github.com/UltraCapture/GAPL) | `Multi-Generator`
 + [**Forensic-MoE: Exploring Comprehensive Synthetic Image Detection Traces with Mixture of Experts**](https://iccv.thecvf.com/virtual/2025/poster/919) | Fang et al. | ICCV 2025 | [Code](https://github.com/fangmq77/Forensic-MoE) | `Multi-Generator`
 + [**HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection**](https://openreview.net/forum?id=msLnKDvhBx) | Yang et al. | ICLR 2026 | `Multi-Generator`
-+ [**Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection**](https://arxiv.org/abs/2506.00874) | Zhou et al. 2025 | `Bias-Free`
-+ [**Exploring the Collaborative Advantage of Low-level Information on Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2504.00463) | Zhou et al. 2025 | `Feature Fusion`
-+ [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Bias`
-+ [**MIRAGE: Towards AI-Generated Image Detection in the Wild**](https://arxiv.org/abs/2508.13223) | Xia et al. 2025 | `Wild`
-+ [**ENABLING YOUR FORENSIC DETECTOR KNOW HOW WELL IT PERFORMS ON DISTORTED SAMPLES**](https://openreview.net/forum?id=Jz5SA2KoFt) | Li et al. | ICLR 2026 | `Robustness`
 
 ---
 
@@ -548,6 +547,7 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 | **DRCT-2M** | 2M images from 16 diffusion models for universal detection | 2024 | [ModelScope](https://modelscope.cn/datasets/BokingChen/DRCT-2M) |
 | **Chameleon** | Human-hard scenarios for sanity-check evaluation | 2025 | [Paper](https://arxiv.org/abs/2406.19435) |
 | **CO-SPYBench** | 22 generators + 50k wild images | 2025 | [Paper](https://arxiv.org/abs/2503.18286) |
+| **MIRAGE** | AI-generated image detection in the wild | 2025 | [Paper](https://arxiv.org/abs/2508.13223) |
 
 ### Specialized Datasets
 
@@ -566,22 +566,8 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 | Tool | Description | Link |
 |:-----|:-----------|:----:|
 | **ForensicHub** | Unified benchmark & codebase | [Code](https://github.com/scu-zjz/ForensicHub) |
-| **SIDBench** | Python framework for SID assessment | - |
+| **SIDBench** | Python framework for SID assessment | [Code](https://github.com/mever-team/sidbench) |
 | **Awesome-AIGC-Detection** | Curated detection papers list | [GitHub](https://fdmas.github.io/AIGCDetect/) |
-
----
-
-## Related Resources
-
-### Other Awesome Lists
-
-+ [Awesome-AIGC-Detection](https://fdmas.github.io/AIGCDetect/Awesome-AIGCDetection.html) - Another curated list of AIGC detection papers
-
-### Related Topics
-
-+ **Digital Watermarking**: GenPTW, HFI
-+ **Image Quality Assessment**: Towards Top-Down Just Noticeable Difference Estimation
-+ **GPT-4o Image Generation**: GPT-ImgEval: A Comprehensive Benchmark for Diagnosing GPT4o in Image Generation
 
 ---
 
@@ -593,7 +579,7 @@ If you find this repository useful, please consider citing:
 @misc{awesome-aigc-image-detection,
   title={Awesome AI-Generated Image Detection},
   author={yjtlab},
-  year={2025},
+  year={2026},
   publisher={GitHub},
   howpublished={\url{https://github.com/yjtlab/awesome-aigc-image-detection}}
 }
