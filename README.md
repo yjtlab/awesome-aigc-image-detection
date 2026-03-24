@@ -2,7 +2,7 @@
 
 A curated and comprehensive list of papers, datasets, and resources for **AI-Generated Image Detection (AIGC Detection)**. This collection covers methods for detecting images synthesized by GANs, diffusion models, autoregressive models, and other generative approaches.
 
-> Continuously updated. Contributions are welcome!
+> Continuously updated.
 
 **Last verified**: 2026-03-16 | **Total papers**: 170+ | **Inclusion criteria**: Peer-reviewed papers (CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, AAAI) and high-impact arXiv preprints on AI-generated **image** detection. Preference for methods providing open-source code.
 
@@ -13,6 +13,7 @@ A curated and comprehensive list of papers, datasets, and resources for **AI-Gen
 - [Survey](#survey)
 - [Paper Tree](#paper-tree)
 - [SOTA Methods](#sota-methods)
+- [Recommended Benchmarks](#recommended-benchmarks)
 - [Papers by Venue](#papers-by-venue)
   - [CVPR 2026](#cvpr-2026)
   - [ICLR 2026](#iclr-2026)
@@ -41,7 +42,6 @@ A curated and comprehensive list of papers, datasets, and resources for **AI-Gen
   - [11. Deepfake / Face Forgery Detection](#11-deepfake--face-forgery-detection)
   - [12. Generalization: Training Strategy & Data Engineering](#12-generalization-training-strategy--data-engineering)
   - [13. Image Attribution / Source Tracing](#13-image-attribution--source-tracing)
-- [Datasets & Benchmarks](#datasets--benchmarks)
 - [Related Resources](#related-resources)
 
 ---
@@ -115,10 +115,9 @@ Awesome AIGC Image Detection
 │   ├── Model Attribution (LatentTracer, AEDR)
 │   └── Fingerprint-based Attribution
 │
-└── 9. Datasets & Benchmarks
-    ├── General (GenImage, WildFake, ForensicHub)
-    ├── Specialized (CTForensics, OpenFake)
-    └── Evaluation Frameworks (SIDBench, AIDE)
+└── 9. Recommended Benchmarks
+    ├── Datasets (ForenSynths, GenImage, DRCT-2M, Community Forensics, ...)
+    └── Evaluation Frameworks (ForensicHub, AIDE)
 ```
 
 ---
@@ -129,24 +128,41 @@ Representative methods with open-source code:
 
 |  Title  |   Venue  |   Year   |   Code   |   Category   |
 |:--------|:--------:|:--------:|:--------:|:--------:|
-| [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | CVPR | 2026 | [GitHub](https://github.com/UltraCapture/GAPL) | Multi-Generator |
-| [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | CVPR | 2026 | [GitHub](https://github.com/liyih/IAPL) | Prompt Learning |
-| [**FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning**](https://openreview.net/forum?id=UcpTOa8OnG) | ICLR | 2026 | - | LMM |
-| [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | CVPR | 2025 | [GitHub](https://github.com/JeongsooP/Community-Forensics) | Multi-Generator |
-| [**FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided Reconstruction Error**](https://arxiv.org/abs/2412.07140) | CVPR | 2025 | - | Reconstruction + Frequency |
-| [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | CVPR | 2025 | [GitHub](https://github.com/grip-unina/B-Free) | Generalization |
-| [**Any-Resolution AI-Generated Image Detection by Spectral Learning**](https://arxiv.org/abs/2411.19417) | CVPR | 2025 | [GitHub](https://github.com/mever-team/spai) | Frequency |
-| [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | CVPR | 2025 | [GitHub](https://github.com/BigAandSmallq/D3) | Generalization |
-| [**LEGION: Learning to Ground and Explain for Synthetic Image Detection**](https://arxiv.org/abs/2503.15264) | ICCV | 2025 | [GitHub](https://github.com/opendatalab/LEGION) | LMM |
-| [**Orthogonal Subspace Decomposition for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2411.15633) | ICML | 2025 | [GitHub](https://github.com/YZY-stack/Effort-AIGI-Detection) | CLIP |
-| [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | ICLR | 2025 | [GitHub](https://github.com/AniSundar18/AlignedForensics) | Generalization |
-| [**Rethinking the Up-Sampling Operations in CNN-based Generative Network for Generalizable Deepfake Detection**](https://arxiv.org/abs/2312.10461) | CVPR | 2024 | [GitHub](https://github.com/chuangchuangtan/NPR-DeepfakeDetection) | Frequency |
-| [**AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error**](https://arxiv.org/abs/2401.17879) | CVPR | 2024 | [GitHub](https://github.com/jonasricker/aeroblade) | Reconstruction |
-| [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | ICML | 2024 | [GitHub](https://github.com/Alicedyd/DRCT) | Reconstruction |
-| [**Towards Universal Fake Image Detectors that Generalize Across Generative Models**](https://arxiv.org/abs/2302.10174) | CVPR | 2023 | [GitHub](https://github.com/Yuheng-Li/UniversalFakeDetect) | CLIP |
-| [**DIRE for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2303.09295) | ICCV | 2023 | [GitHub](https://github.com/ZhendongWang6/DIRE) | Reconstruction |
-| [**Learning on Gradients: Generalized Artifacts Representation for GAN-Generated Images Detection**](https://arxiv.org/abs/2304.04871) | CVPR | 2023 | [GitHub](https://github.com/chuangchuangtan/LGrad) | Gradient |
-| [**CNN-generated images are surprisingly easy to spot...for now**](https://arxiv.org/abs/1912.11035) | CVPR | 2020 | [GitHub](https://github.com/peterwang512/CNNDetection) | CNN Forensics |
+| [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | CVPR | 2026 | ![Star](https://img.shields.io/github/stars/UltraCapture/GAPL.svg?style=social&label=Star) <br> [GitHub](https://github.com/UltraCapture/GAPL) | Multi-Generator |
+| [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | CVPR | 2026 | ![Star](https://img.shields.io/github/stars/liyih/IAPL.svg?style=social&label=Star) <br> [GitHub](https://github.com/liyih/IAPL) | Prompt Learning |
+| [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | CVPR | 2025 | ![Star](https://img.shields.io/github/stars/JeongsooP/Community-Forensics.svg?style=social&label=Star) <br> [GitHub](https://github.com/JeongsooP/Community-Forensics) | Multi-Generator |
+| [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | CVPR | 2025 | ![Star](https://img.shields.io/github/stars/grip-unina/B-Free.svg?style=social&label=Star) <br> [GitHub](https://github.com/grip-unina/B-Free) | Generalization |
+| [**Any-Resolution AI-Generated Image Detection by Spectral Learning**](https://arxiv.org/abs/2411.19417) | CVPR | 2025 | ![Star](https://img.shields.io/github/stars/mever-team/spai.svg?style=social&label=Star) <br> [GitHub](https://github.com/mever-team/spai) | Frequency |
+| [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | CVPR | 2025 | ![Star](https://img.shields.io/github/stars/BigAandSmallq/D3.svg?style=social&label=Star) <br> [GitHub](https://github.com/BigAandSmallq/D3) | Generalization |
+| [**LEGION: Learning to Ground and Explain for Synthetic Image Detection**](https://arxiv.org/abs/2503.15264) | ICCV | 2025 | ![Star](https://img.shields.io/github/stars/opendatalab/LEGION.svg?style=social&label=Star) <br> [GitHub](https://github.com/opendatalab/LEGION) | LMM |
+| [**Orthogonal Subspace Decomposition for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2411.15633) | ICML | 2025 | ![Star](https://img.shields.io/github/stars/YZY-stack/Effort-AIGI-Detection.svg?style=social&label=Star) <br> [GitHub](https://github.com/YZY-stack/Effort-AIGI-Detection) | CLIP |
+| [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | ICLR | 2025 | ![Star](https://img.shields.io/github/stars/AniSundar18/AlignedForensics.svg?style=social&label=Star) <br> [GitHub](https://github.com/AniSundar18/AlignedForensics) | Generalization |
+| [**Rethinking the Up-Sampling Operations in CNN-based Generative Network for Generalizable Deepfake Detection**](https://arxiv.org/abs/2312.10461) | CVPR | 2024 | ![Star](https://img.shields.io/github/stars/chuangchuangtan/NPR-DeepfakeDetection.svg?style=social&label=Star) <br> [GitHub](https://github.com/chuangchuangtan/NPR-DeepfakeDetection) | Frequency |
+| [**AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error**](https://arxiv.org/abs/2401.17879) | CVPR | 2024 | ![Star](https://img.shields.io/github/stars/jonasricker/aeroblade.svg?style=social&label=Star) <br> [GitHub](https://github.com/jonasricker/aeroblade) | Reconstruction |
+| [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | ICML | 2024 | ![Star](https://img.shields.io/github/stars/Alicedyd/DRCT.svg?style=social&label=Star) <br> [GitHub](https://github.com/beibuwandeluori/DRCT) | Reconstruction |
+| [**Towards Universal Fake Image Detectors that Generalize Across Generative Models**](https://arxiv.org/abs/2302.10174) | CVPR | 2023 | ![Star](https://img.shields.io/github/stars/Yuheng-Li/UniversalFakeDetect.svg?style=social&label=Star) <br> [GitHub](https://github.com/Yuheng-Li/UniversalFakeDetect) | CLIP |
+| [**DIRE for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2303.09295) | ICCV | 2023 | ![Star](https://img.shields.io/github/stars/ZhendongWang6/DIRE.svg?style=social&label=Star) <br> [GitHub](https://github.com/ZhendongWang6/DIRE) | Reconstruction |
+| [**Learning on Gradients: Generalized Artifacts Representation for GAN-Generated Images Detection**](https://arxiv.org/abs/2304.04871) | CVPR | 2023 | ![Star](https://img.shields.io/github/stars/chuangchuangtan/LGrad.svg?style=social&label=Star) <br> [GitHub](https://github.com/chuangchuangtan/LGrad) | Gradient |
+| [**CNN-generated images are surprisingly easy to spot...for now**](https://arxiv.org/abs/1912.11035) | CVPR | 2020 | ![Star](https://img.shields.io/github/stars/peterwang512/CNNDetection.svg?style=social&label=Star) <br> [GitHub](https://github.com/peterwang512/CNNDetection) | CNN Forensics |
+
+---
+
+## Recommended Benchmarks
+
+Widely-used benchmarks and evaluation frameworks in this field:
+
+| Benchmark | Description | Year | Code |
+|:----------|:-----------|:----:|:----:|
+| **ForenSynths** | 11 CNN-based generators (ProGAN, StyleGAN, etc.) for binary detection | 2020 | ![Star](https://img.shields.io/github/stars/peterwang512/CNNDetection.svg?style=social&label=Star) <br> [GitHub](https://github.com/peterwang512/CNNDetection) |
+| **UniversalFakeDetect** | 26 generators spanning GANs and diffusion models | 2023 | ![Star](https://img.shields.io/github/stars/Yuheng-Li/UniversalFakeDetect.svg?style=social&label=Star) <br> [GitHub](https://github.com/Yuheng-Li/UniversalFakeDetect) |
+| **GenImage** | Million-scale benchmark covering 8 generators | 2023 | ![Star](https://img.shields.io/github/stars/GenImage-Dataset/GenImage.svg?style=social&label=Star) <br> [GitHub](https://github.com/GenImage-Dataset/GenImage) |
+| **Synthbuster** | Diffusion-generated images for detection benchmarking | 2023 | [Paper](https://arxiv.org/abs/2312.02023) |
+| **DRCT-2M** | 2M images from 16 diffusion models for universal detection | 2024 | [ModelScope](https://modelscope.cn/datasets/BokingChen/DRCT-2M) |
+| **Aligned Forensics** | Semantically-aligned real/fake pairs for unbiased evaluation | 2025 | ![Star](https://img.shields.io/github/stars/AniSundar18/AlignedForensics.svg?style=social&label=Star) <br> [GitHub](https://github.com/AniSundar18/AlignedForensics) |
+| **Chameleon** | Human-hard scenarios for sanity-check evaluation | 2025 | ![Star](https://img.shields.io/github/stars/shilinyan99/AIDE.svg?style=social&label=Star) <br> [GitHub](https://github.com/shilinyan99/AIDE) |
+| **CO-SPYBench** | 22 generators + 50k wild images | 2025 | ![Star](https://img.shields.io/github/stars/Megum1/Co-Spy.svg?style=social&label=Star) <br> [GitHub](https://github.com/Megum1/Co-Spy) |
+| **Community Forensics** | 4803 generators for large-scale generalization | 2025 | ![Star](https://img.shields.io/github/stars/JeongsooP/Community-Forensics.svg?style=social&label=Star) <br> [GitHub](https://github.com/JeongsooP/Community-Forensics) |
+| **ForensicHub** | Unified benchmark & codebase for AIGC detection | 2025 | ![Star](https://img.shields.io/github/stars/scu-zjz/ForensicHub.svg?style=social&label=Star) <br> [GitHub](https://github.com/scu-zjz/ForensicHub) |
 
 ---
 
@@ -254,7 +270,7 @@ Representative methods with open-source code:
 ### ICML 2024
 
 + [**How to Trace Latent Generative Model Generated Images without Artificial Watermark?**](https://arxiv.org/abs/2405.13360) | Wang et al. | [Code](https://github.com/ZhentingWang/LatentTracer) | `Attribution`
-+ [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | Chen et al. | [Code](https://github.com/Alicedyd/DRCT) | `Reconstruction`
++ [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | Chen et al. | [Code](https://github.com/beibuwandeluori/DRCT) | `Reconstruction`
 
 ### Earlier Works (2020-2023)
 
@@ -529,45 +545,6 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 + [**Which Model Generated This Image? A Model-Agnostic Approach for Origin Attribution**](https://arxiv.org/abs/2404.02697) | Liu et al. 2024 | [Code](https://github.com/uwFengyuan/OCC-CLIP) | `Attribution`
 + [**PRADA: Probability-Ratio-Based Attribution and Detection of Autoregressive-Generated Images**](https://arxiv.org/abs/2511.20068) | Damm et al. 2025 | `Attribution`
 + [**Data Provenance for Image Auto-Regressive Generation**](https://openreview.net/forum?id=qYu4wj7O3z) | Zhao et al. | ICLR 2026 | `Attribution`
-
----
-
----
-
-## Datasets & Benchmarks
-
-### General Datasets
-
-| Dataset | Description | Year | Link |
-|:--------|:-----------|:----:|:----:|
-| **GenImage** | Million-scale benchmark covering 8 generators | 2023 | [Paper](https://arxiv.org/abs/2306.08571) |
-| **WildFake** | Large-scale challenging dataset from the wild | 2024 | [Paper](https://arxiv.org/abs/2402.11843) |
-| **OpenFake** | Open dataset and platform for large-scale deepfake detection | 2025 | [Paper](https://arxiv.org/abs/2509.09495) |
-| **ForensicHub** | Unified benchmark and codebase for AIGC detection | 2025 | [Code](https://github.com/scu-zjz/ForensicHub) |
-| **DRCT-2M** | 2M images from 16 diffusion models for universal detection | 2024 | [ModelScope](https://modelscope.cn/datasets/BokingChen/DRCT-2M) |
-| **Chameleon** | Human-hard scenarios for sanity-check evaluation | 2025 | [Paper](https://arxiv.org/abs/2406.19435) |
-| **CO-SPYBench** | 22 generators + 50k wild images | 2025 | [Paper](https://arxiv.org/abs/2503.18286) |
-| **MIRAGE** | AI-generated image detection in the wild | 2025 | [Paper](https://arxiv.org/abs/2508.13223) |
-
-### Specialized Datasets
-
-| Dataset | Description | Year | Link |
-|:--------|:-----------|:----:|:----:|
-| **CTForensics** | AI-Generated CT image detection | 2026 | [Paper](https://arxiv.org/abs/2603.01878) |
-| **LOKI** | Comprehensive synthetic data detection benchmark using LMMs | 2025 | [Code](https://github.com/opendatalab/LOKI) |
-| **AIDE** | Sanity check benchmark for AI-generated image detection | 2025 | [Code](https://github.com/shilinyan99/AIDE) |
-| **SIDBench** | Python framework for assessing synthetic image detection methods | 2024 | - |
-| **SynthScars** | Artifact-level explainability benchmark | 2025 | [Paper](https://arxiv.org/abs/2503.15264) |
-| **B-Free Dataset** | Bias-controlled paired real/fake setting | 2025 | [Code](https://github.com/grip-unina/B-Free) |
-| **Community Forensics** | 4803 generators for large-scale generalization | 2025 | [Code](https://github.com/JeongsooP/Community-Forensics) |
-
-### Evaluation Tools
-
-| Tool | Description | Link |
-|:-----|:-----------|:----:|
-| **ForensicHub** | Unified benchmark & codebase | [Code](https://github.com/scu-zjz/ForensicHub) |
-| **SIDBench** | Python framework for SID assessment | [Code](https://github.com/mever-team/sidbench) |
-| **Awesome-AIGC-Detection** | Curated detection papers list | [GitHub](https://fdmas.github.io/AIGCDetect/) |
 
 ---
 
