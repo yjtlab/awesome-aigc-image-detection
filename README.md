@@ -200,7 +200,7 @@ Widely-used benchmarks and evaluation frameworks in this field:
 + [**Detecting Generated Images by Fitting Natural Image Distributions**](https://arxiv.org/abs/2411.01674) | Zhang et al. | [Code](https://github.com/tmlr-group/ConV) | `Spotlight` `Training-free`
 + [**Denoising Trajectory Biases for Zero-Shot AI-Generated Image Detection**](https://openreview.net/forum?id=2h8vXbEufN) | Liang et al. | `Training-free`
 + [**Training-free Detection of AI-generated images via Cropping Robustness**](https://arxiv.org/abs/2511.14030) | Choi et al. | [Code](https://github.com/sungikchoi/WaRPAD) | `Training-free`
-+ **Towards Generalizable Detector for Generated Image** | Cai et al. | [Code](https://github.com/dav-joy-thon/DEnD-Detection) | `Perturbation`
++ [**Towards Generalizable Detector for Generated Image**](https://openreview.net/forum?id=MeawZGFIcT) | Cai et al. | [Code](https://github.com/dav-joy-thon/DEnD-Detection) | `Perturbation`
 + [**Epistemic Uncertainty for Generated Image Detection**](https://arxiv.org/abs/2412.05897) | Nie et al. | [Code](https://github.com/tmlr-group/WePe) | `Uncertainty`
 + [**Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable**](https://arxiv.org/abs/2505.14359) | Chen et al. | `Spotlight` `Training Strategy`
 + [**MLEP: Multi-granularity Local Entropy Patterns for Generalized AI-generated Image Detection**](https://arxiv.org/abs/2504.13726) | Yuan et al. | [Code](https://github.com/fkeufss/MLEP) | `Pattern`
@@ -442,7 +442,7 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 + [**Detecting AI-Generated Images via Distributional Deviations from Real Images**](https://arxiv.org/abs/2601.03586) | Niu et al. 2026 | `Perturbation`
 + [**Epistemic Uncertainty for Generated Image Detection (WePe)**](https://arxiv.org/abs/2412.05897) | Nie et al. | NeurIPS 2025 | [Code](https://github.com/tmlr-group/WePe) | `Uncertainty`
 + [**How Noise Benefits AI-generated Image Detection**](https://arxiv.org/abs/2511.16136) | Yan et al. 2025 | `Perturbation`
-+ **Towards Generalizable Detector for Generated Image (DEnD)** | Cai et al. | NeurIPS 2025 | [Code](https://github.com/dav-joy-thon/DEnD-Detection) | `Perturbation`
++ [**Towards Generalizable Detector for Generated Image**](https://openreview.net/forum?id=MeawZGFIcT) | Cai et al. | NeurIPS 2025 | [Code](https://github.com/dav-joy-thon/DEnD-Detection) | `Perturbation`
 + [**Detecting Generated Images by Fitting Natural Image Distributions**](https://arxiv.org/abs/2411.01674) | Zhang et al. | NeurIPS 2025 Spotlight | [Code](https://github.com/tmlr-group/ConV) | `Training-free`
 + [**ENABLING YOUR FORENSIC DETECTOR KNOW HOW WELL IT PERFORMS ON DISTORTED SAMPLES**](https://openreview.net/forum?id=Jz5SA2KoFt) | Li et al. | ICLR 2026 | `Robustness`
 
