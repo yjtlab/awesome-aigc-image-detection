@@ -59,63 +59,63 @@ A curated and comprehensive list of papers, datasets, and resources for **AI-Gen
 ```
 Awesome AIGC Image Detection
 │
-├── 1. Feature-based Detection
-│   ├── 1.1 CLIP / Vision-Language
-│   │   ├── CLIP Fine-tuning (CLIPping, Raising the Bar, DeeCLIP)
-│   │   ├── Prompt Learning (AntifakePrompt, FatFormer)
-│   │   ├── Feature Decoupling (NS-Net, CausalCLIP, DGS-Net)
-│   │   └── Information Bottleneck (VIB, MCIB)
-│   ├── 1.2 Frequency-domain
-│   │   ├── Spectral Analysis (Fractal Self-Similarity, Spectral Artifacts)
-│   │   ├── Frequency Reconstruction (FIRE)
-│   ├── 1.3 Patch / Texture
-│   │   ├── Patch Learning (SSP, PatchCraft, Panoptic Patch)
-│   │   ├── Texture Analysis (TextureCrop, Rich/Poor Texture)
-│   └── 1.4 Noise / Fingerprint
-│       ├── Noise Imprint (Implicit Noise Imprint)
-│       ├── Camera Fingerprint (Wavelet Domain Fingerprint)
-│       └── Color Distribution (Secret Lies in Color, Demosaicing)
+├── 1. CLIP / Vision-Language Methods
+│   ├── 1.1 CLIP Fine-tuning (CLIPping, Raising the Bar, DeeCLIP, ForgeLens)
+│   ├── 1.2 Prompt & Language-Guided (AntifakePrompt, PLOT, FatFormer, IAPL)
+│   ├── 1.3 Feature Decoupling & Fusion (NS-Net, CausalCLIP, CLIPMoLE, CO-SPY)
+│   └── 1.4 Information Bottleneck (VIB, MCIB)
 │
-├── 2. Reconstruction-based Detection
-│   ├── 2.1 Diffusion Reconstruction (DIRE, FIRE, LATTE)
+├── 2. Reconstruction-based Methods
+│   ├── 2.1 Diffusion Reconstruction (DIRE, DRCT, LATTE)
 │   ├── 2.2 Autoencoder Reconstruction (AEROBLADE, GRRE, CINEMAE)
 │   ├── 2.3 Latent Space (LaRE², FakeInversion)
-│   └── 2.4 Semantic-Aware (SARE)
+│   └── 2.4 Semantic-Aware (SARE, Exposing the Fake)
 │
-├── 3. Perturbation / Robustness-based
-│   ├── RIGID, RA-Det
-│   ├── Epistemic Uncertainty
-│   └── Noise Benefits (How Noise Benefits)
+├── 3. Frequency-domain Methods
+│   ├── Spectral Analysis (Fractal Self-Similarity, SPAI, Spectral Artifacts)
+│   ├── Color / Demosaicing (Secret Lies in Color, Color Matters)
+│   └── Fourier / DCT (Fourier Spectrum Discrepancies)
 │
-├── 4. LMM / Reasoning-based (Explainable)
+├── 4. Patch / Texture-based Methods
+│   ├── Patch Learning (SSP, PatchCraft, Panoptic Patch)
+│   └── Texture Analysis (TextureCrop, Breaking Semantic Artifacts)
+│
+├── 5. Low-level Artifact Detection
+│   ├── Up-sampling Artifact (NPR)
+│   ├── Pixel-level (FerretNet, PiD, Pixel-level Mapping)
+│   ├── Entropy / Bit-plane (MLEP, LOTA)
+│   └── Noise / Fingerprint (Implicit Noise Imprint, FingerprintNet)
+│
+├── 6. Perturbation / Robustness-based Methods
+│   ├── Perturbation (RIGID, RA-Det, DEnD)
+│   ├── Uncertainty (WePe)
+│   └── Distribution Fitting (ConV)
+│
+├── 7. LMM / Reasoning-based Methods
 │   ├── Grounding & Explanation (LEGION, AIGI-Holmes, FakeReasoning)
 │   ├── Multi-modal Detection (ThinkFake, Spot the Fake, SIDA)
 │   └── VLM-based (Veritas, FakeShield, FAKEXPLAIN)
 │
-├── 5. Zero-shot & Training-free
-│   ├── Training-free (RIGID, Intermediate Representations, Spectral Artifacts)
-│   ├── Zero-shot (Forensic Self-Descriptions)
-│   └── Contrastive Inversion
+├── 8. Zero-shot & Training-free Methods
+│   ├── Training-free (RIGID, WaRPAD, HFI, AEROBLADE, ConV)
+│   └── Zero-shot (Forensic Self-Descriptions, Cozzolino, Beyond Generation)
 │
-├── 6. Generalization: Training Strategy & Data Engineering
-│   ├── Data Alignment (Dual Data Alignment, Aligned Datasets)
-│   ├── Regularization (SimLBR)
-│   ├── Bias-Free Training (B-Free Paradigm)
-│   ├── Real-Centric (MIRROR, Real-Centric Envelope)
-│   └── Calibration (Calibrated Detector, D³)
+├── 9. Diffusion-specific Detection
+│   ├── Reconstruction Error (DIRE, AEROBLADE, LaRE², FIRE, DRCT, FakeInversion)
+│   └── Probabilistic / Trajectory (Diffusion Epistemic Uncertainty, Corvi 2022)
 │
-├── 7. Special Targets
-│   ├── 7.1 Deepfake / Face Forgery
-│   ├── 7.2 Autoregressive Model (PRADA, D³QE)
-│   └── 7.3 Diffusion-specific (DNF, Corvi 2022)
+├── 10. Autoregressive Model Detection (PRADA, D³QE, Data Provenance)
 │
-├── 8. Image Attribution / Source Tracing
-│   ├── Model Attribution (LatentTracer, AEDR)
-│   └── Fingerprint-based Attribution
+├── 11. Deepfake Detection (D³, Veritas, Real-Time Deepfake)
 │
-└── 9. Recommended Benchmarks
-    ├── Datasets (ForenSynths, GenImage, DRCT-2M, Community Forensics, ...)
-    └── Evaluation Frameworks (ForensicHub, AIDE)
+├── 12. Generalization: Training Strategy & Data Engineering
+│   ├── Data Alignment (Dual Alignment, AlignedForensics, B-Free)
+│   ├── Real-Centric & Calibration (MIRROR, Stay-Positive, Calibrated)
+│   └── Multi-Generator (Community Forensics, GAPL, Forensic-MoE)
+│
+└── 13. Image Attribution / Source Tracing
+    ├── Model Attribution (LatentTracer, AEDR, OCC-CLIP)
+    └── AR Attribution (PRADA, Data Provenance)
 ```
 
 ---
