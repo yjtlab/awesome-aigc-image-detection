@@ -328,9 +328,11 @@ Widely-used benchmarks and evaluation frameworks in this field:
 
 ### 1. CLIP / Vision-Language Methods
 
-Methods leveraging CLIP or other vision-language models for AIGC detection.
+> Vision-language foundation models like CLIP encode rich semantic and visual priors that transfer surprisingly well to AI-generated image detection. The dominant approach fine-tunes only a small fraction of parameters on CLIP's frozen features—via linear probes, LoRA, or lightweight adapters—achieving strong cross-generator generalization while avoiding overfitting to specific model fingerprints. Recent works extend this paradigm with prompt learning, feature decoupling, and information bottleneck principles to further isolate forgery-relevant signals from semantic content.
 
 #### 1.1 CLIP Fine-tuning & Adaptation
+
+> Methods here adapt CLIP's visual encoder for detection through minimal fine-tuning, ranging from linear probes over frozen features to parameter-efficient approaches like LoRA and MoE adapters. Cozzolino et al. demonstrated that CLIP's universal representations already encode subtle generative artifacts without task-specific pre-training; subsequent works such as ForgeLens and DGS-Net further introduce data-efficient guidance mechanisms to focus CLIP features on forgery-discriminative regions.
 
 + [**Raising the Bar of AI-generated Image Detection with CLIP**](https://arxiv.org/abs/2312.00195) | Cozzolino et al. | 2024 | `CLIP`
 + [**CLIPping the Deception: Adapting Vision-Language Models for Universal Deepfake Detection**](https://dl.acm.org/doi/10.1145/3652583.3658035) | ICMR 2024 | [Code](https://github.com/sohailahmedkhan/CLIPping-the-Deception) | `CLIP`
@@ -342,12 +344,16 @@ Methods leveraging CLIP or other vision-language models for AIGC detection.
 
 #### 1.2 Prompt Learning & Language-Guided
 
+> Instead of adapting CLIP's weights, these methods steer its representation space via learnable text/visual prompts or language-guided contrastive objectives. By conditioning on forgery-aware language descriptions, detectors acquire richer cross-modal cues and can adapt to new domains with few-shot examples, bypassing the need for large-scale fake image collections.
+
 + [**AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors**](https://arxiv.org/abs/2310.17419) | Chang et al. 2024 | `Prompt`
 + [**Forgery-aware Adaptive Transformer for Generalizable Synthetic Image Detection**](https://arxiv.org/abs/2312.16649) | Liu et al. | CVPR 2024 | [Code](https://github.com/Michel-liu/FatFormer) | `Language-Guided`
 + [**MiraGe: Multimodal Discriminative Representation Learning for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2508.01525) | Shi et al. 2025 | `Prompt`
 + [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Prompt`
 
 #### 1.3 Feature Decoupling & Fusion
+
+> CLIP features conflate forgery-irrelevant semantic content with subtle generative artifacts, causing detectors to overfit to spurious correlations. These methods decompose CLIP features into orthogonal or causally disentangled subspaces—separating content from forgery clues—or fuse complementary pixel-level signals to improve robustness under domain shift.
 
 + [**CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection**](https://arxiv.org/abs/2512.13285) | Liu et al. 2025 | `CLIP`
 + [**Mixture of Low-rank Experts for Transferable AI-Generated Image Detection**](https://arxiv.org/abs/2404.04883) | Liu et al. 2024 | [Code](https://github.com/zhliuworks/CLIPMoLE) | `CLIP`
@@ -356,6 +362,8 @@ Methods leveraging CLIP or other vision-language models for AIGC detection.
 
 #### 1.4 Information Bottleneck
 
+> Variational information bottleneck and related compression principles are used to retain only the detection-relevant features while discarding content information. This leads to representations that are provably more robust to distribution shift across generative models.
+
 + [**Towards Universal AI-Generated Image Detection by Variational Information Bottleneck Network**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhang_Towards_Universal_AI-Generated_Image_Detection_by_Variational_Information_Bottleneck_Network_CVPR_2025_paper.pdf) | Zhang et al. | CVPR 2025 | [Code](https://github.com/oceanzhf/VIBAIGCDetect) | `CLIP`
 + [**Multimodal Conditional Information Bottleneck for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2505.15217) | Qin et al. 2025 | [Code](https://github.com/Ant0ny44/InfoFD) | `CLIP`
 
@@ -363,9 +371,11 @@ Methods leveraging CLIP or other vision-language models for AIGC detection.
 
 ### 2. Reconstruction-based Methods
 
-Methods that detect AI-generated images by analyzing reconstruction errors.
+> The core intuition is that a generative model "knows" its own output: feeding an AI-generated image back through the same (or similar) model yields a near-perfect reconstruction, while a real image reconstructed by that model will show noticeable error. Early work (DIRE) validated this for diffusion models via DDIM inversion; later methods extend the principle to VAE autoencoders (AEROBLADE, GRRE), latent inversion (LaRE², FakeInversion), and masked autoencoders (CINEMAE). The main limitation is that reconstruction quality depends on having access to models architecturally similar to the generator.
 
 #### 2.1 Diffusion Reconstruction
+
+> These methods compute reconstruction errors under a fixed pre-trained diffusion model. DIRE pioneered the DDIM-inversion approach; DRCT further introduces contrastive training to make the reconstruction error discriminative. LATTE encodes the multi-step latent trajectory itself as an embedding for detection.
 
 + [**DIRE for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2303.09295) | Wang et al. | ICCV 2023 | [Code](https://github.com/ZhendongWang6/DIRE) | `Reconstruction`
 + [**DRCT: Diffusion Reconstruction Contrastive Training towards Universal Detection**](https://openreview.net/pdf?id=oRLwyayrh1) | ICML 2024 | `Reconstruction`
@@ -374,6 +384,8 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 
 #### 2.2 Autoencoder Reconstruction
 
+> Latent diffusion models use a VAE encoder–decoder whose reconstruction error is nearly zero for images the model generated, but elevated for real or out-of-distribution images. AEROBLADE exploits this in a fully training-free manner; GRRE improves robustness by removing the green channel before reconstruction; CINEMAE adapts frozen MAE features for cross-generator detection.
+
 + [**AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error**](https://arxiv.org/abs/2401.17879) | Ricker et al. | CVPR 2024 | `Reconstruction`
 + [**GRRE: Leveraging G-Channel Removed Reconstruction Error for Robust Detection of AI-Generated Images**](https://arxiv.org/abs/2601.02709) | He et al. 2026 | `Reconstruction`
 + [**CINEMAE: Leveraging Frozen Masked Autoencoders for Cross-Generator AI Image Detection**](https://arxiv.org/abs/2511.06325) | Jang et al. 2025 | `Reconstruction`
@@ -381,10 +393,14 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 
 #### 2.3 Latent Space
 
+> Rather than pixel-space error, these methods work directly in the compressed latent space of a diffusion model's VAE. LaRE² measures latent reconstruction discrepancy; FakeInversion inverts the image into SD's latent space and uses the inversion residual as a detection signal for unseen T2I models.
+
 + [**LaRE²: Latent Reconstruction Error Based Method for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2403.17465) | Luo et al. | CVPR 2024 | `Reconstruction`
 + [**FakeInversion: Learning to Detect Images from Unseen Text-to-Image Models by Inverting Stable Diffusion**](https://arxiv.org/abs/2406.08603) | Cazenavette et al. | CVPR 2024 | `Reconstruction`
 
 #### 2.4 Semantic-Aware Reconstruction
+
+> These methods incorporate semantic understanding into the reconstruction pipeline, computing errors that are conditioned on image content (SARE) or using semantic guidance to disentangle generation artifacts from content-related variation.
 
 + [**SARE: Semantic-Aware Reconstruction Error for Generalizable Diffusion-Generated Image Detection**](https://arxiv.org/abs/2508.09487) | Kang et al. 2025 | arXiv | `Reconstruction`
 + [**Exposing the Fake: Effective Diffusion-Generated Images Detection**](https://arxiv.org/abs/2307.06272) | Ma et al. | AdvML-Frontiers@ICML 2023 Workshop | `Reconstruction`
@@ -392,6 +408,8 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 ---
 
 ### 3. Frequency-domain Methods
+
+> Generative processes—especially convolution-heavy GANs and iterative diffusion sampling—leave characteristic traces in the frequency spectrum of synthesized images. Early work showed GAN-generated images lack natural spectral fall-off; newer methods exploit fractal self-similarity (Xiao et al.), spectral scale-invariance (SPAI), and color-demosaicing correlations as generalizable features. These signals are often complementary to spatial-domain detectors and resilient to common post-processing operations.
 
 + [**Generalizable AI-Generated Image Detection Based on Fractal Self-Similarity in the Spectrum**](https://arxiv.org/abs/2503.08484) | Xiao et al. 2025 | `Frequency`
 + [**Any-Resolution AI-Generated Image Detection by Spectral Learning**](https://arxiv.org/abs/2411.19417) | Karageorgiou et al. | CVPR 2025 | [Code](https://github.com/mever-team/spai) | `Frequency`
@@ -405,6 +423,8 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 
 ### 4. Patch / Texture-based Methods
 
+> AI-generated images exhibit inconsistent texture statistics across local regions: patches from different parts of a synthetic image often show mismatched noise patterns or unnatural smoothness that real camera images do not. These methods extract and compare local patch-level features—using SRM noise residuals, texture contrast, or patch-contrastive learning—to expose synthetic origin while remaining insensitive to global semantic content. Recent work (Panoptic Patch Learning) highlights that over-relying on a few high-saliency patches leads to poor generalization and proposes uniform patch utilization strategies.
+
 + [**A Single Simple Patch is All You Need for AI-generated Image Detection**](https://arxiv.org/abs/2402.01123) | Chen et al. 2024 | `Patch`
 + [**PatchCraft: Exploring Texture Patch for Efficient AI-generated Image Detection**](https://arxiv.org/abs/2311.12397) | Zhong et al. 2024 | `Patch`
 + [**All Patches Matter, More Patches Better: Enhance AI-Generated Image Detection via Panoptic Patch Learning**](https://openreview.net/forum?id=ob7PJs8kPU) | Yang et al. | ICLR 2026 | `Patch`
@@ -417,7 +437,7 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 
 ### 5. Low-level Artifact Detection
 
-Methods that exploit low-level pixel-level, noise-level, or structural artifacts left by generative processes.
+> Generative models introduce subtle but consistent artifacts at the pixel level: upsampling operations in CNN-based generators create periodic neighbor-pixel patterns (NPR); VAE decoders impose characteristic smoothing traces detectable via local pixel dependencies (FerretNet); multi-bit-plane analysis and local entropy reveal structured deviations invisible to the naked eye (LOTA, MLEP). Unlike frequency or patch methods, these approaches operate at the finest spatial scale and tend to generalize well precisely because the artifacts are architecture-agnostic byproducts of the generation pipeline rather than semantic fingerprints.
 
 + [**Rethinking the Up-Sampling Operations in CNN-based Generative Network for Generalizable Deepfake Detection**](https://arxiv.org/abs/2312.10461) | Tan et al. | CVPR 2024 | [Code](https://github.com/chuangchuangtan/NPR-DeepfakeDetection) | `Up-sampling Artifact`
 + [**FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies**](https://arxiv.org/abs/2509.20890) | Liang et al. | NeurIPS 2025 | [Code](https://github.com/xigua7105/FerretNet) | `Pixel`
@@ -434,6 +454,8 @@ Methods that exploit low-level pixel-level, noise-level, or structural artifacts
 
 ### 6. Perturbation / Robustness-based Methods
 
+> Real images and AI-generated images respond differently to controlled noise perturbations: authentic images sit on the natural image manifold and thus show higher perceptual stability under perturbation, while synthetic images—constrained to the generative model's learned distribution—deviate more dramatically. RIGID formalizes this as representation-similarity testing with no training required; ConV fits natural image distributions via normalizing flows; WePe models epistemic uncertainty under perturbation. These methods are particularly valued for their training-free or training-light properties and independence from knowing the source generator.
+
 + [**RIGID: A Training-free and Model-Agnostic Framework for Robust AI-Generated Image Detection**](https://arxiv.org/abs/2405.20112) | He et al. 2024 | `Perturbation`
 + [**RA-Det: Towards Universal Detection of AI-Generated Images via Robustness Asymmetry**](https://arxiv.org/abs/2603.01544) | Wang et al. 2026 | arXiv | `Perturbation`
 + [**Detecting AI-Generated Images via Distributional Deviations from Real Images**](https://arxiv.org/abs/2601.03586) | Niu et al. 2026 | `Perturbation`
@@ -447,7 +469,7 @@ Methods that exploit low-level pixel-level, noise-level, or structural artifacts
 
 ### 7. LMM / Reasoning-based Methods
 
-Methods leveraging Large Multimodal Models for explainable and generalizable detection.
+> Large Multimodal Models (LMMs) bring a qualitatively different capability to AIGC detection: instead of a binary verdict, they can localize suspicious regions, enumerate specific artifact types, and generate natural-language explanations. LEGION and AIGI-Holmes demonstrate that grounding detection in fine-grained visual reasoning substantially improves generalization, as the model must identify *why* an image is fake rather than memorizing distributional shortcuts. The main challenge is collecting high-quality annotation data for forgery reasoning at scale; recent benchmarks like MMFR-Dataset begin to address this gap.
 
 + [**LEGION: Learning to Ground and Explain for Synthetic Image Detection**](https://arxiv.org/abs/2503.15264) | Kang et al. | ICCV 2025 | [Code](https://github.com/opendatalab/LEGION) | `LMM`
 + [**AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models**](https://arxiv.org/abs/2507.02664) | Zhou et al. | ICCV 2025 | [Code](https://github.com/wyczzy/AIGI-Holmes) | `LMM`
@@ -465,6 +487,8 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 ---
 
 ### 8. Training-free & Zero-shot Methods
+
+> **Training-free** methods require no gradient updates of any kind—they exploit intrinsic properties of pre-trained models (autoencoders, VFMs, normalizing flows) as off-the-shelf detectors. **Zero-shot** methods may train a lightweight classifier but use *only real images*, eliminating the need to collect or generate fake training data. Both paradigms are critical for keeping pace with the rapid proliferation of new generative models, as they generalize to unseen generators by construction rather than by memorization.
 
 + [**RIGID: A Training-free and Model-Agnostic Framework for Robust AI-Generated Image Detection**](https://arxiv.org/abs/2405.20112) | He et al. 2024 | `Training-free`
 + **Intermediate Representations Are Strong Training-Free AI-Generated Image Detectors** | `Training-free`
@@ -484,7 +508,7 @@ Methods leveraging Large Multimodal Models for explainable and generalizable det
 
 ### 9. Diffusion-specific Detection
 
-Methods whose core mechanism is designed exclusively for diffusion-generated images.
+> Methods in this section are architecturally or algorithmically tied to the diffusion generation pipeline: their core mechanism exploits DDIM inversion, VAE reconstruction loops, or denoising trajectory properties that are meaningful *only* for diffusion-generated content and would not transfer to GAN or autoregressive images. They represent the frontier of detection accuracy for the currently dominant class of generative models.
 
 + [**DIRE for Diffusion-Generated Image Detection**](https://arxiv.org/abs/2303.09295) | Wang et al. | ICCV 2023 | [Code](https://github.com/ZhendongWang6/DIRE) | `Diffusion`
 + [**AEROBLADE: Training-Free Detection of Latent Diffusion Images Using Autoencoder Reconstruction Error**](https://arxiv.org/abs/2401.17879) | Ricker et al. | CVPR 2024 | `Diffusion` `Training-free`
@@ -500,6 +524,8 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 
 ### 10. Autoregressive Model Detection
 
+> Autoregressive (AR) image generators—such as VQGAN, LlamaGen, and GPT-4o's image mode—produce images token by token using discrete vocabularies, creating a fundamentally different artifact signature from diffusion or GAN processes. PRADA exploits the explicit conditional/unconditional token probabilities intrinsic to AR generation; D³QE targets quantization error patterns in the discrete token space. As AR-based visual generation matures, dedicated detection approaches for this paradigm are becoming increasingly important.
+
 + [**PRADA: Probability-Ratio-Based Attribution and Detection of Autoregressive-Generated Images**](https://arxiv.org/abs/2511.20068) | Damm et al. 2025 | `Autoregressive`
 + [**D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated Image Detection**](https://arxiv.org/abs/2510.05891) | Zhang et al. 2025 | `Autoregressive`
 + [**Data Provenance for Image Auto-Regressive Generation**](https://openreview.net/forum?id=qYu4wj7O3z) | Zhao et al. | ICLR 2026 | `AR / Attribution`
@@ -510,6 +536,8 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 
 > Only includes papers that also evaluate on general AI-generated image detection benchmarks, not face-only methods.
 
+> Face deepfake detection has a longer history than general AIGC detection and has developed powerful face-specific priors (landmark consistency, blending artifacts). Methods included here cross the divide by demonstrating effectiveness on general synthetic images as well, making them relevant to the broader community.
+
 + [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | Yang et al. | CVPR 2025 | [Code](https://github.com/BigAandSmallq/D3) | `Deepfake + General`
 + [**Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning**](https://openreview.net/forum?id=5VXJPS1HoM) | Tan et al. | ICLR 2026 Oral | [Code](https://github.com/Rosstein/HydraFake-tanh) | `LMM + Deepfake`
 + [**Real-Time Deepfake Detection in the Real-World**](https://arxiv.org/abs/2406.09398) | Cavia et al. 2024 | `Deepfake`
@@ -518,7 +546,11 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 
 ### 12. Generalization: Training Strategy & Data Engineering
 
+> The generalization gap—where a detector trained on ProGAN performs poorly on Stable Diffusion—stems largely from dataset biases (resolution, JPEG compression, semantic content alignment) rather than a fundamental inability to detect artifacts. This section covers work that directly tackles the training data bottleneck: bias-free paradigms that generate fake images semantically aligned with real counterparts (B-Free), large-scale multi-generator datasets (Community Forensics with 4803 models), and calibration/regularization strategies that make detectors robust across distribution shifts.
+
 #### 12.1 Data Alignment & Construction
+
+> These works identify and eliminate spurious dataset biases—differences in JPEG quality, resolution, or semantic content between real and fake splits—by carefully constructing training pairs where real and fake images share the same semantic content. B-Free uses SD's conditioning to generate fakes from real images; Community Forensics massively scales generator diversity.
 
 + [**Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable**](https://arxiv.org/abs/2505.14359) | Chen et al. | NeurIPS 2025 Spotlight | `Data Alignment`
 + [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | Rajan et al. | ICLR 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Data Alignment`
@@ -530,12 +562,16 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 
 #### 12.2 Real-Centric & Calibration
 
+> A complementary perspective: rather than engineering better fake training data, these methods focus on the real-image side. They learn a manifold of real images and classify anything that deviates as synthetic (Stay-Positive, MIRROR), or apply post-hoc calibration to existing detectors to correct for score distribution shifts without re-training.
+
 + [**MIRROR: Manifold Ideal Reference ReconstructOR for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2602.02222) | Liu et al. 2026 | arXiv | [Code](https://github.com/349793927/MIRROR) | `Real-Centric`
 + [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. | AAAI 2026 | `Calibration`
 + [**Stay-Positive: A Case for Ignoring Real Image Features in Fake Image Detection**](https://arxiv.org/abs/2502.07778) | ICML 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Real-Centric`
 + [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Test-Time Adaptation`
 
 #### 12.3 Multi-Generator
+
+> As the number of publicly accessible generative models explodes, training on thousands of generators has emerged as a scalable path to generalization. Community Forensics empirically shows monotonic improvement with generator count; GAPL introduces prototype-based generator-aware representations that efficiently scale to thousands of model signatures via cross-attention and LoRA adapters.
 
 + [**Community Forensics: Using Thousands of Generators to Train Fake Image Detectors**](https://arxiv.org/abs/2411.04125) | Park et al. | CVPR 2025 | [Code](https://github.com/JeongsooP/Community-Forensics) | `Multi-Generator`
 + [**Scaling Up AI-Generated Image Detection via Generator-Aware Prototypes**](https://arxiv.org/abs/2512.12982) | Qin et al. | CVPR 2026 | [Code](https://github.com/UltraCapture/GAPL) | `Multi-Generator`
@@ -545,6 +581,8 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 ---
 
 ### 13. Image Attribution / Source Tracing
+
+> Attribution goes beyond binary detection to answer *which* generative model produced an image. Methods exploit the fact that each generator imprints a unique fingerprint: LatentTracer uses VAE invertibility as a per-model signature; AEDR performs double-reconstruction to amplify model-specific latent feature consistency; OCC-CLIP leverages CLIP embeddings for open-set attribution. Attribution is inherently harder than detection and faces the open-set challenge: new models not seen during training must still be correctly identified or rejected.
 
 + [**How to Trace Latent Generative Model Generated Images without Artificial Watermark?**](https://arxiv.org/abs/2405.13360) | Wang et al. | ICML 2024 | [Code](https://github.com/ZhentingWang/LatentTracer) | `Attribution`
 + [**AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction**](https://arxiv.org/abs/2501.09245) | Wang et al. | AAAI 2026 Oral | `Attribution`
