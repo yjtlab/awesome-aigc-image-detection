@@ -62,7 +62,7 @@ Awesome AIGC Image Detection
 ├── 1. Feature-based Detection
 │   ├── 1.1 CLIP / Vision-Language
 │   │   ├── CLIP Fine-tuning (CLIPping, Raising the Bar, DeeCLIP)
-│   │   ├── Prompt Learning (AntifakePrompt, PLOT, Image-Adaptive)
+│   │   ├── Prompt Learning (AntifakePrompt, FatFormer)
 │   │   ├── Feature Decoupling (NS-Net, CausalCLIP, DGS-Net, MiraGe)
 │   │   └── Information Bottleneck (VIB, MCIB)
 │   ├── 1.2 Frequency-domain
@@ -240,7 +240,7 @@ Widely-used benchmarks and evaluation frameworks in this field:
 + [**CO-SPY: Combining Semantic and Pixel Features to Detect Synthetic Images by AI**](https://arxiv.org/abs/2503.18286) | Cheng et al. | `Feature Fusion`
 + [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | Yang et al. | [Code](https://github.com/BigAandSmallq/D3) | `Training Strategy`
 + [**Forensic Self-Descriptions Are All You Need for Zero-Shot Detection, Open-Set Source Attribution, and Localization**](https://arxiv.org/abs/2503.21003) | Nguyen et al. | `Zero-shot`
-+ [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | `Feature`
++ [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | `One-class`
 
 ### ICLR 2025
 
@@ -254,7 +254,7 @@ Widely-used benchmarks and evaluation frameworks in this field:
 
 + [**Zero-Shot Detection of AI-Generated Images**](https://arxiv.org/abs/2409.15875) | Cozzolino et al. | `Zero-shot`
 + [**Contrasting Deepfakes Diffusion via Contrastive Learning and Global-Local Similarities**](https://arxiv.org/abs/2407.20337) | Baraldi et al. | `Contrastive`
-+ [**Leveraging Representations from Intermediate Encoder-Blocks for Synthetic Image Detection**](https://arxiv.org/abs/2402.19091) | Koutlis et al. | [Code](https://github.com/mever-team/rine) | `Feature`
++ [**Leveraging Representations from Intermediate Encoder-Blocks for Synthetic Image Detection**](https://arxiv.org/abs/2402.19091) | Koutlis et al. | [Code](https://github.com/mever-team/rine) | `CLIP`
 
 ### NeurIPS 2024
 
@@ -346,7 +346,6 @@ Methods leveraging CLIP or other vision-language models for AIGC detection.
 #### 1.2 Prompt Learning & Language-Guided
 
 + [**AntifakePrompt: Prompt-Tuned Vision-Language Models are Fake Image Detectors**](https://arxiv.org/abs/2310.17419) | Chang et al. 2024 | `Prompt`
-+ [**PLOT: Prompt Learning with Optimal Transport**](https://arxiv.org/abs/2210.01253) | Chen et al. | ICLR 2023 | `Prompt`
 + [**Forgery-aware Adaptive Transformer for Generalizable Synthetic Image Detection**](https://arxiv.org/abs/2312.16649) | Liu et al. | CVPR 2024 | [Code](https://github.com/Michel-liu/FatFormer) | `Language-Guided`
 + [**MiraGe: Multimodal Discriminative Representation Learning for Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2508.01525) | Shi et al. 2025 | `Prompt`
 + [**Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning**](https://arxiv.org/abs/2508.01603) | Li et al. | CVPR 2026 | [Code](https://github.com/liyih/IAPL) | `Prompt`
@@ -431,7 +430,7 @@ Methods that detect AI-generated images by analyzing reconstruction errors.
 
 + [**Revealing the Implicit Noise-based Imprint of Generative Models**](https://arxiv.org/abs/2503.09314) | Li et al. 2025 | `Noise`
 + [**Perceptual Classifiers: Detecting Generative Images using Perceptual Features**](https://openaccess.thecvf.com/content/ICCV2025W/VQualA/papers/Durbha_Perceptual_Classifiers_Detecting_Generative_Images_using_Perceptual_Features_ICCVW_2025_paper.pdf) | Durbha et al. | ICCV 2025 Workshop | `Perceptual`
-+ [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | CVPR 2025 | `Feature`
++ [**Beyond Generation: A Diffusion-based Low-level Feature Extractor for Detecting AI-generated Images**](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhong_Beyond_Generation_A_Diffusion-based_Low-level_Feature_Extractor_for_Detecting_AI-generated_CVPR_2025_paper.pdf) | Zhong et al. | CVPR 2025 | `One-class`
 + [**HFI: A Unified Framework for Training-free Detection and Implicit Watermarking of Latent Diffusion Models**](https://arxiv.org/abs/2412.20704) | Choi et al. 2024 | `Fingerprint`
 + [**Exploring the Collaborative Advantage of Low-level Information on Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2504.00463) | Zhou et al. 2025 | `Feature Fusion`
 
@@ -527,7 +526,7 @@ Methods whose core mechanism is designed exclusively for diffusion-generated ima
 + [**Aligned Datasets Improve Detection of Latent Diffusion-Generated Images**](https://arxiv.org/abs/2410.11835) | Rajan et al. | ICLR 2025 | [Code](https://github.com/AniSundar18/AlignedForensics) | `Data Alignment`
 + [**A Bias-Free Training Paradigm for More General AI-generated Image Detection**](https://arxiv.org/abs/2412.17671) | Guillaro et al. | CVPR 2025 | [Code](https://github.com/grip-unina/B-Free) | `Bias-Free`
 + [**Breaking Latent Prior Bias in Detectors for Generalizable AIGC Image Detection**](https://arxiv.org/abs/2506.00874) | Zhou et al. | NeurIPS 2025 | `Bias-Free`
-+ [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Bias`
++ [**Fake or JPEG? Revealing Common Biases in Generated Image Detection Datasets**](https://arxiv.org/abs/2403.17608) | Grommelt et al. 2024 | [Page](https://www.unbiased-genimage.org/) | `Data Alignment`
 + [**Task-Model Alignment: A Simple Path to Generalizable AI-Generated Image Detection**](https://arxiv.org/abs/2512.06746) | Chen et al. 2025 | `Data Alignment`
 + [**SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images**](https://arxiv.org/abs/2602.20412) | Dhakal et al. | CVPR 2026 | `Regularization`
 
