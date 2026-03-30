@@ -193,7 +193,7 @@ Widely-used benchmarks and evaluation frameworks in this field:
 + [**Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated**](https://arxiv.org/abs/2602.01973) | Yang et al. | `Calibration`
 + [**Beyond Semantic Features: Pixel-level Mapping for Generalized AI-Generated Image Detection**](https://arxiv.org/abs/2512.17350) | Zhou et al. | `Pixel-level`
 + [**Aggregating Diverse Cue Experts for AI-Generated Image Detection**](https://arxiv.org/abs/2601.08790) | Tan et al. | `Feature Fusion`
-+ [**Explainable Synthetic Image Detection through Diffusion Timestep Ensembling**](https://arxiv.org/abs/2503.06201) | Wu et al. | `Explainable`
++ [**Explainable Synthetic Image Detection through Diffusion Timestep Ensembling**](https://arxiv.org/abs/2503.06201) | Wu et al. | `LMM`
 
 ### NeurIPS 2025
 
@@ -485,14 +485,14 @@ Widely-used benchmarks and evaluation frameworks in this field:
 + [**FakeShield: Explainable Image Forgery Detection and Localization via Multi-modal Large Language Models**](https://arxiv.org/abs/2410.02761) | Xu et al. | ICLR 2025 | [Code](https://github.com/zhipeixu/FakeShield) | `LMM`
 + [**FAKEXPLAIN: AI-Generated Images Detection via Human-Aligned Grounded Reasoning**](https://openreview.net/forum?id=UcpTOa8OnG) | Ji et al. | ICLR 2026 | `LMM`
 + [**Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images**](https://openreview.net/forum?id=0iN4UKZwgn) | Tan et al. | ICLR 2026 | `LMM`
-+ [**Explainable Synthetic Image Detection through Diffusion Timestep Ensembling**](https://arxiv.org/abs/2503.06201) | Wu et al. | AAAI 2026 | `Explainable`
++ [**Explainable Synthetic Image Detection through Diffusion Timestep Ensembling**](https://arxiv.org/abs/2503.06201) | Wu et al. | AAAI 2026 | `LMM`
 + [**Unlocking the Capabilities of Large Vision-Language Models for Generalizable and Explainable Deepfake Detection**](https://arxiv.org/abs/2503.14853) | ICML 2025 | `LMM`
 
 ---
 
 ### 8. Training-free & Zero-shot Methods
 
-> **Training-free** = no gradient updates at all; **Zero-shot** = may train a classifier but uses only real images—both generalize to unseen generators by construction.
+> Require no training on fake data—exploit intrinsic properties of pre-trained models (reconstruction error, feature distributions, perturbation response) to detect without any task-specific optimization, naturally generalizing to unseen generators.
 
 + [**RIGID: A Training-free and Model-Agnostic Framework for Robust AI-Generated Image Detection**](https://arxiv.org/abs/2405.20112) | He et al. 2024 | `Training-free`
 + **Intermediate Representations Are Strong Training-Free AI-Generated Image Detectors** | `Training-free`
@@ -538,7 +538,7 @@ Widely-used benchmarks and evaluation frameworks in this field:
 
 ### 11. Deepfake Detection
 
-> Face deepfake methods that also generalize to general AI-generated image detection benchmarks (not face-only).
+> Face deepfake methods that also generalize to general AI-generated image detection benchmarks.
 
 + [**D³: Scaling Up Deepfake Detection by Learning from Discrepancy**](https://arxiv.org/abs/2404.04584) | Yang et al. | CVPR 2025 | [Code](https://github.com/BigAandSmallq/D3) | `Deepfake + General`
 + [**Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning**](https://openreview.net/forum?id=5VXJPS1HoM) | Tan et al. | ICLR 2026 Oral | [Code](https://github.com/Rosstein/HydraFake-tanh) | `LMM + Deepfake`
